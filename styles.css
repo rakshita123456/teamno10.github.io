@@ -98,13 +98,14 @@ section.active {
     overflow: hidden;
 }
 
+/* Earth Animation */
 .earth {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 60%;
     height: 60%;
-    background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/nasa-earth.jpg');
+    background-image: url('https://i.imgur.com/6vszF2h.png'); /* Example Earth Image URL */
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -122,7 +123,7 @@ section.active {
     }
 }
 
-/* Course, City, and Team Section Styling */
+/* Other Sections Styles */
 #course-intro, #city-intro {
     background-color: #f0f0f0;
     padding: 50px;
@@ -146,6 +147,7 @@ p {
     color: #666;
 }
 
+/* Team Section */
 .team-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -177,11 +179,6 @@ p {
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Hover Effect for Links */
-a:hover {
-    color: #ff6f61;
 }
 
 /* Responsive Design */
