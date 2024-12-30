@@ -46,12 +46,33 @@ section {
     display: block;
 }
 
-/* Styling for Home Section */
+/* Home Section with Earth Animation */
 #home {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.earth-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.earth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/nasa-earth.jpg'); /* Earth image URL */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: rotateEarth 10s linear infinite;
 }
 
 .content {
@@ -76,6 +97,16 @@ section {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Earth Rotation Animation */
+@keyframes rotateEarth {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
