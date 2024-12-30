@@ -4,20 +4,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
     background: #111;
     color: #fff;
-    animation: backgroundAnimation 30s linear infinite;
-}
-
-/* Smooth background animation */
-@keyframes backgroundAnimation {
-    0% {
-        background: linear-gradient(45deg, #1d2b64, #f8cdda);
-    }
-    100% {
-        background: linear-gradient(45deg, #f8cdda, #1d2b64);
-    }
 }
 
 /* Navigation Styles */
@@ -71,7 +59,7 @@ section {
     display: none;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    padding: 50px;
+    padding: 40px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     margin-bottom: 20px;
@@ -88,7 +76,7 @@ section.active {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
 }
 
 .content h1 {
