@@ -20,7 +20,7 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 nav ul li {
@@ -51,37 +51,51 @@ section {
     animation-fill-mode: forwards;
 }
 
+/* Globe effect */
+.globe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.globe {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #00ff00, #004d00);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.7), 0 0 60px rgba(0, 255, 0, 0.5);
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    margin-top: 20px;
+}
+
 section h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-section .highlight {
-    color: #00ff00;
-}
-
-section p, ul {
+section p {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.6em;
     color: #cccccc;
 }
 
-ul li {
-    font-size: 1.1em;
-    line-height: 1.6em;
-    margin-bottom: 10px;
-}
-
-ul li strong {
+.highlight {
     color: #00ff00;
 }
 
@@ -95,29 +109,6 @@ ul li strong {
     }
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(-50%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Section-specific animations */
 .fade-in {
     animation-name: fadeIn;
 }
