@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chikmanglur Project</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hide all sections by default */
+        section {
+            display: none;
+        }
+        
+        /* Show section when it's active */
+        .active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#course-intro">Course Introduction</a></li>
-                <li><a href="#city-intro">City Introduction</a></li>
-                <li><a href="#team-details">Team Details</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('course-intro')">Course Introduction</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('city-intro')">City Introduction</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('team-details')">Team Details</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Home Section -->
-        <section id="home" class="fade-in">
+        <section id="home" class="fade-in active">
             <div class="globe-container">
-    <div class="shiny-globe"></div>
-
-
+                <div class="shiny-globe"></div>
             </div>
             <div class="content">
                 <h1>Welcome to the city of <span class="highlight">Chikmanglur</span>!</h1>
@@ -77,5 +86,18 @@
             </ul>
         </section>
     </main>
+
+    <script>
+        // Function to show the selected section and hide others
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+    </script>
 </body>
 </html>
