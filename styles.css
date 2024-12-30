@@ -4,12 +4,25 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f5f5f5;
     overflow-x: hidden;
+    height: 100vh;
+    background: url('https://www.w3schools.com/w3images/galaxy.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: starAnimation 30s linear infinite;
+}
+
+/* Animation for Starry Effect */
+@keyframes starAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 header {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
@@ -48,8 +61,12 @@ nav ul li a:hover {
 main {
     margin-top: 80px;
     padding: 40px;
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
 }
 
+/* Sections */
 section {
     display: none;
     opacity: 0;
@@ -59,26 +76,28 @@ section {
 section.active {
     display: flex;
     opacity: 1;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Split-screen Layout for Home */
+/* Home Section */
 #home {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+    padding: 50px;
 }
 
 .left-content {
-    flex: 1;
-    padding: 50px;
-    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
 }
 
 .left-content h1 {
     font-size: 3.5rem;
     font-weight: 600;
-    color: #333;
     margin-bottom: 20px;
 }
 
@@ -89,44 +108,16 @@ section.active {
 .left-content p {
     font-size: 1.4rem;
     line-height: 1.6;
-    color: #555;
+    margin-bottom: 30px;
 }
 
-.right-content {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Earth Animation */
-.earth {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60%;
-    height: 60%;
-    background-image: url('https://i.imgur.com/6vszF2h.png'); /* Example Earth Image URL */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: earthRotation 10s linear infinite;
-}
-
-/* Earth Animation */
-@keyframes earthRotation {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Other Sections Styles */
-#course-intro, #city-intro {
-    background-color: #f0f0f0;
+/* Other Sections */
+#course-intro, #city-intro, #team-details {
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 h1, h2 {
@@ -145,40 +136,19 @@ p {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #666;
+    margin-bottom: 20px;
 }
 
 /* Team Section */
-.team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
+ul {
+    list-style-type: none;
+    padding: 0;
     margin-top: 30px;
 }
 
-.team-member {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member h2 {
-    font-size: 1.8rem;
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.team-member p {
+ul li {
     font-size: 1.2rem;
-    color: #666;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 /* Responsive Design */
@@ -190,14 +160,5 @@ p {
 
     .left-content {
         padding: 20px;
-    }
-
-    .earth {
-        width: 50%;
-        height: 50%;
-    }
-
-    .team-container {
-        grid-template-columns: 1fr;
     }
 }
