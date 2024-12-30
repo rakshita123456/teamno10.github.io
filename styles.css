@@ -1,3 +1,64 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ff00;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    text-align: center;
+    padding: 40px 20px;
+    opacity: 0; /* Default hidden for animation */
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Globe effect */
+.globe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 /* New shiny globe */
 .shiny-globe {
     width: 200px;
@@ -41,4 +102,89 @@
                     0 0 140px rgba(255, 204, 0, 0.6);
         transform: scale(1.05);
     }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    margin-top: 20px;
+}
+
+section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+section p, ul {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #cccccc;
+}
+
+ul li {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+}
+
+ul li strong {
+    color: #00ff00;
+}
+
+.highlight {
+    color: #00ff00;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation-name: fadeIn;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation-name: slideIn;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-in {
+    animation-name: zoomIn;
 }
